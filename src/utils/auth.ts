@@ -5,5 +5,5 @@ export function generateAccessToken(id: string) {
     throw new Error("TOKEN_SECRET is not defined in environment variables.");
   }
 
-  return jwt.sign({ id }, process.env.TOKEN_SECRET, { expiresIn: "8800s" });
+  return jwt.sign({ id }, process.env.TOKEN_SECRET, { expiresIn: "7d" });
 }

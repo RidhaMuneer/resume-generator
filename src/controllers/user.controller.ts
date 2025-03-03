@@ -2,24 +2,6 @@ import { Request, Response, NextFunction } from 'express';
 import * as userService from '../services/user.service';
 import { generateAccessToken } from '../utils/auth';
 
-export const getAllUsers = async (
-  req: Request,
-  res: Response,
-  next: NextFunction
-) => {
-  try {
-    const users = await userService.findAllUsers();
-    res.status(200).json({
-      status: 'success',
-      data: {
-        users,
-      },
-    });
-  } catch (error) {
-    next(error);
-  }
-};
-
 export const getUserById = async (
   req: Request,
   res: Response,
