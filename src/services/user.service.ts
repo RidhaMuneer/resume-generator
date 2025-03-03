@@ -1,10 +1,6 @@
 import { User, IUser } from '../models/user.model';
 import { hashPassword } from '../utils/hash';
 
-export const findAllUsers = async () => {
-  return User.find({ isActive: true }).select('-password');
-};
-
 export const findUserById = async (id: string) => {
   return User.findById(id).select('-password');
 };

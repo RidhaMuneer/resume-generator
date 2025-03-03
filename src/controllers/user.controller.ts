@@ -39,14 +39,13 @@ export const createUser = async (
       status: "success",
       data: {
         user,
-        access_token: generateAccessToken(user.id),
+        access_token: generateAccessToken(user._id as string),
       },
     });
   } catch (error) {
     next(error); 
   }
 };
-
 
 export const updateUser = async (
   req: Request,
