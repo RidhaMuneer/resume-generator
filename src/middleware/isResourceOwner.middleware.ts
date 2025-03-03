@@ -1,5 +1,5 @@
 import { NextFunction, Response } from "express";
-import { AuthRequest } from "../types/auth";
+import { AuthRequest } from "../types/auth.type";
 
 export const isResourceOwner = (req: AuthRequest, res: Response, next: NextFunction): void => {
   const paramUserId = req.params.id;

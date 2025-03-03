@@ -1,8 +1,7 @@
 import { NextFunction } from "express";
 import jwt from "jsonwebtoken";
-import { AuthRequest } from "../types/auth";
+import { AuthRequest } from "../types/auth.type";
 
-// Fix the authMiddleware to extract just the id from the decoded token
 export const authMiddleware = (req: AuthRequest, res: any, next: NextFunction) => {
   const token = req.header("Authorization")?.split(" ")[1];
   if (!token) {
